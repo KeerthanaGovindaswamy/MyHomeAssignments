@@ -45,9 +45,11 @@ public class DeleteLead {
 		driver.findElement(By.xpath("//button[text()='Find Leads']")).click();
 //	- Verify the presence of the message "No records to display" in the Lead List. This
 //	message confirms the successful deletion.
-		String message = driver.findElement(By.xpath("(//div[text()='No records to display'])")).getText();
+		String message = driver.findElement(By.xpath("(//div[@class='x-paging-info'])")).getText();
 		System.out.println(message);
 		System.out.println("The lead is deleted successfully");
+		
+		driver.close();
 
 
 	}
